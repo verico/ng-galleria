@@ -51,7 +51,7 @@ function MyCtrl($scope) {
             ],
             index : {     // Selected image object when loaded
                    image : "image1.jpg",
-                   thumb : "image1_thumb.jpg",
+                   thumb : "image1_thumb.jpg"
             }
         }
 };
