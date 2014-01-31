@@ -12,7 +12,6 @@ Getting Started
 
 Component expects galleria with the classic theme to be found in folder:
 'non_bower_components/galleria/'
-
 Edit source if other is desired.
 
 
