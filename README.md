@@ -24,8 +24,7 @@ Edit source if other is desired.
 Usage
 ---------------
 
-Directive got one attribute named 'source'
-Bind this up with a object of type:
+Directive got one attribute named 'source'. Bind this up with a object of type:
 
 
 ```html
@@ -56,11 +55,6 @@ function MyCtrl($scope) {
             }
         }
 };
-
-
-
-
-
 
 [galleria]: http://galleria.io/
 [jQuery]: http://jquery.com/
