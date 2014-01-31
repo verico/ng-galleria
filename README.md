@@ -61,3 +61,4 @@ function MyCtrl($scope) {
 [galleria]: http://galleria.io/
 [jQuery]: http://jquery.com/
 [underscore]: http://underscorejs.org/
+[bower]: http://twitter.github.com/bower/
