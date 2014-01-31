@@ -37,7 +37,7 @@ Directive got one attribute named 'source'. Bind this up with a object of type:
 <body ng-controller="MyCtrl">
     <ng-galleria source="images"></ng-galleria>
 </body>
-
+```
 
 ```javascript
 function MyCtrl($scope) {
