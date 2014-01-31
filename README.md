@@ -13,6 +13,8 @@ Dependent on :
 Getting Started
 ---------------
 
+* Install with [Bower][bower]: `$ bower install ng-galleria`
+
 Component expects galleria with the classic theme to be found in folder:
 'non_bower_components/galleria/'
 
