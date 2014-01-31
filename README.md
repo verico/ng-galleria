@@ -45,8 +45,8 @@ function MyCtrl($scope) {
     $scope.images = {
             images:[
                 {
-                    image : "image1.jpg",     // Image url
-                    thumb : "image1_thumb.jpg",     // Thumb url
+                    image : "image1.jpg",       // Image url
+                    thumb : "image1_thumb.jpg"  // Thumb url
                 }
             ],
             index : {     // Selected image object when loaded
@@ -55,7 +55,7 @@ function MyCtrl($scope) {
             }
         }
 };
-
+```
 [galleria]: http://galleria.io/
 [jQuery]: http://jquery.com/
 [underscore]: http://underscorejs.org/
