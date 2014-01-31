@@ -5,7 +5,7 @@ angular.module('com.verico.ng-galleria', [])
             controller: 'galleriaDirectiveCtrl',
             template: '<div class="galleria" style="height: 100%; width: 100%">' +
                 '<a href="{{img.image}}" ng-repeat="img in source.images">' +
-                '<img src="{{img.thumb}}" ng-click="alert(\'click\')">' +
+                '<img src="{{img.thumb}}">' +
                 '</a>' +
                 '</div>',
             scope: {
