@@ -1,11 +1,27 @@
-Angular Galleria directive.
-Wraps Galleria inside a directive.
 
+Angular Galleria directive
+=================
+
+Angular wrapper for the [Galleria] [galleria]
 Dependent on : Galleria, Underscore
 
 
-Directive got one attribute -> 'source'
 
+Getting Started
+---------------
+
+Component expects galleria with the classic theme to be found in folder:
+--'non_bower_components/galleria/'
+
+Edit source if other is desired.
+
+
+
+Directive got one attribute named 'source'
+
+Bind this up with a object of type:
+
+```javascript
 source = {
         images:[
             {
@@ -20,7 +36,6 @@ source = {
     }
 
 
- Directive expects galleria to be found in folder:
-'non_bower_components/galleria/'
 
-Edit source if other is desired.
+<!-- links to third party projects -->
+[galleria]: http://galleria.io/
