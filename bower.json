@@ -1,0 +1,13 @@
+{
+    "name": "ng-galleria",
+    "version": "0.0.1",
+    "main": "./ng-galleria.js",
+    "ignore": [
+        "README.md"
+    ],
+    "dependencies": {
+        "angular" :  ">=1.0.8",
+        "underscore" : "latest"
+    },
+    "description": "Angular galleria directive"
+}
