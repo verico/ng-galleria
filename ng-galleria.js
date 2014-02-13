@@ -15,9 +15,21 @@ angular.module('com.verico.ng-galleria', [])
     });
 
 function galleriaDirectiveCtrl($scope, $element, $timeout) {
+    var  isPhoneGap = function() {
+        return (cordova || PhoneGap || phonegap)
+            && /^file:\/{3}[^\/]/i.test(window.location.href)
+            && /ios|iphone|ipod|ipad|android/i.test(navigator.userAgent);
+    };
+
     var obj = $element.find('.galleria');
 
-    Galleria.loadTheme('../../non_bower_components/galleria/themes/classic/galleria.classic.min.js');
+    //Detect if cordova is running
+    if (!isPhoneGap()) {
+        Galleria.loadTheme('non_bower_components/galleria/themes/classic/galleria.classic.min.js');
+    }else{
+        Galleria.loadTheme('../../non_bower_components/galleria/themes/classic/galleria.classic.min.js');
+    }
+
     Galleria.configure({
         dummy: '/res/img/dummy.gif'
     });
