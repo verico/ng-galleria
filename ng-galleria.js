@@ -17,7 +17,7 @@ angular.module('com.verico.ng-galleria', [])
 function galleriaDirectiveCtrl($scope, $element, $timeout) {
     var obj = $element.find('.galleria');
 
-    Galleria.loadTheme('non_bower_components/galleria/themes/classic/galleria.classic.min.js');
+    Galleria.loadTheme('../../non_bower_components/galleria/themes/classic/galleria.classic.min.js');
     Galleria.configure({
         dummy: '/res/img/dummy.gif'
     });
