@@ -1,12 +1,13 @@
 {
-    "name": "ng-galleria",
-    "version": "0.0.1",
-    "main": "./ng-galleria.js",
-    "ignore": [
-        "README.md"
-    ],
-    "dependencies": {
-        "angular" :  "1.3.5"
-    },
-    "description": "Angular galleria directive"
+  "name": "ng-galleria",
+  "version": "0.0.1",
+  "main": "./ng-galleria.js",
+  "ignore": [
+    "README.md"
+  ],
+  "dependencies": {
+    "angular": "1.3.5",
+    "jquery": "~2.1.1"
+  },
+  "description": "Angular galleria directive"
 }

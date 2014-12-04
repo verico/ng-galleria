@@ -4,9 +4,8 @@ Angular Galleria directive
 
 Angular wrapper for the [Galleria] [galleria]  "Responsive JavaScript Image Gallery"
 Dependent on :
-* [galleria] [Galleria]
+* [galleria][Galleria]
 * [jQuery][jquery]
-* [underscore] [Underscore]
 
 
 
@@ -30,11 +29,10 @@ Directive got one attribute named 'source'. Bind this up with a object of type:
 
 
 ```html
-<script type="text/javascript" src="../../bower_components/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="../../bower_components/underscore/underscore-min.js"></script>
-<script type="text/javascript" src="../../bower_components/angular/angular.min.js"></script>
-<script type="text/javascript" src="../../non_bower_components/galleria/galleria-1.3.3.min.js"></script>
-<script type="text/javascript" src="../../bower_components/ng-galleria/ng-galleria.js"></script>
+<script type="text/javascript" src="/bower_components/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="/bower_components/ng-galleria/ng-galleria.js"></script>
+<script type="text/javascript" src="/non_bower_components/galleria/galleria-1.3.3.min.js"></script>
 
 <body ng-controller="MyCtrl">
     <ng-galleria source="images"></ng-galleria>
@@ -60,5 +58,4 @@ function MyCtrl($scope) {
 ```
 [galleria]: http://galleria.io/
 [jQuery]: http://jquery.com/
-[underscore]: http://underscorejs.org/
 [bower]: http://twitter.github.com/bower/
