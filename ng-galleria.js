@@ -13,7 +13,7 @@ angular.module('com.verico.ng-galleria', [])
                 $timeout(function () {
                     var index = -1;
                     for(var i = 0; i < $scope.source.images.length; i++){
-                        if($scope.source.images[i].image === $scope.source.index){
+                        if($scope.source.images[i] === $scope.source.index){
                             index = i;
                             break;
                         }
