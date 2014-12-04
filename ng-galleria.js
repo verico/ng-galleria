@@ -12,21 +12,17 @@ angular.module('com.verico.ng-galleria', [])
                 var GalleriaApiReference;
                 $timeout(function () {
                     var index = -1;
-                    for(var i = 0; i < $scope.source.images; i++){
+                    for(var i = 0; i < $scope.source.images.length; i++){
                         if($scope.source.images[i] === $scope.source.index.image){
                             index = i;
                             break;
                         }
                     }
 
-
-
-
                     Galleria.run(obj, {
                         show: index,
                         extend: function(){
                             GalleriaApiReference = this;
-
                         }
                     });
                 });
