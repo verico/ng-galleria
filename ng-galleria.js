@@ -18,7 +18,8 @@ angular.module('com.verico.ng-galleria', [])
 
                 var obj = $element.find('.galleria');
                 Galleria.configure({
-                    dummy: '/res/img/dummy.gif'
+                    dummy: '/res/img/dummy.gif',
+					_toggleInfo: false
                 });
 
                 var GalleriaApiReference;
