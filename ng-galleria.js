@@ -16,7 +16,7 @@ angular.module('com.verico.ng-galleria', [])
     .directive('ngGalleria', function () {
         return {
             restrict: 'E',
-            controller: function galleriaDirectiveCtrl($scope, $element, $timeout) {
+            controller: function galleriaDirectiveCtrl($scope, $element, $timeout,galleria) {
 
                 var  isPhoneGap = function() {
                     return (document.location.protocol == "file:");
