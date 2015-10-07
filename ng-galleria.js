@@ -2,13 +2,26 @@ angular.module('com.verico.ng-galleria', [])
 
 
     .provider('galleria', function () {
+
         var path;
+
+        // default config
+        var options = {
+                showInfo: true,
+                _toggleInfo: false
+            };
+
         this.setPath = function(input){
             path = input;
         };
+
+        this.setOptions = function(input){
+            options = input
+        };
         this.$get = function galleriaFactory(){
             return {
-                path: path
+                path: path,
+                options:options
             };
         };
     })
@@ -31,10 +44,8 @@ angular.module('com.verico.ng-galleria', [])
 
 
                 var obj = $element.find('.galleria');
-                Galleria.configure({
-                    dummy: '/res/img/dummy.gif',
-					_toggleInfo: false
-                });
+                Galleria.configure(galleria.options);
+
 
                 var GalleriaApiReference;
                 $timeout(function () {
