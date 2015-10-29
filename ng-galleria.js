@@ -1,8 +1,35 @@
 angular.module('com.verico.ng-galleria', [])
+
+
+    .provider('galleria', function () {
+
+        var path;
+
+        // default config
+        var options = {
+                showInfo: true,
+                _toggleInfo: false
+            };
+
+        this.setPath = function(input){
+            path = input;
+        };
+
+        this.setOptions = function(input){
+            options = input
+        };
+        this.$get = function galleriaFactory(){
+            return {
+                path: path,
+                options:options
+            };
+        };
+    })
+
     .directive('ngGalleria', function () {
         return {
             restrict: 'E',
-            controller: function galleriaDirectiveCtrl($scope, $element, $timeout) {
+            controller: function galleriaDirectiveCtrl($scope, $element, $timeout,galleria) {
 
                 var  isPhoneGap = function() {
                     return (document.location.protocol == "file:");
@@ -10,17 +37,15 @@ angular.module('com.verico.ng-galleria', [])
 
                 //Detect if cordova is running
                 if (!isPhoneGap()) {
-                    Galleria.loadTheme('non_bower_components/galleria/themes/classic/galleria.classic.min.js');
+                    Galleria.loadTheme(galleria.path);
                 }else{
-                    Galleria.loadTheme('../../non_bower_components/galleria/themes/classic/galleria.classic.min.js');
+                    Galleria.loadTheme('../../'+galleria.path);
                 }
 
 
                 var obj = $element.find('.galleria');
-                Galleria.configure({
-                    dummy: '/res/img/dummy.gif',
-					_toggleInfo: false
-                });
+                Galleria.configure(galleria.options);
+
 
                 var GalleriaApiReference;
                 $timeout(function () {

@@ -12,15 +12,38 @@ Dependent on :
 Getting Started
 ---------------
 
+### 1. Install
 * Install with [Bower][bower]: `$ bower install ng-galleria`
 
-Component expects galleria with the classic theme to be found in folder:
-'non_bower_components/galleria/'
 
-Edit source if other is desired.
+### 2. Include Module
+It is required to set a path where the desired galleria theme is to be found.
+
+Include the module to your app
+
+    angular.module('myModule', ['com.verico.ng-galleria']);
 
 
+### 3. Set Path
+then call the galleriaProvider and set your themes path.
 
+    .config(function (galleriaProvider) {
+        galleriaProvider.setPath('assets/galleria/themes/classic/galleria.classic.js');
+     }
+### 4. Configure 
+call the SetOptions method to pass options
+
+    .config(function (galleriaProvider) {
+        galleriaProvider.setPath('assets/galleria/themes/classic/galleria.classic.js');
+        
+        galleriaProvider.setOptions({
+                    dummy: '/res/img/dummy.gif',
+                    _toggleInfo: false,
+                    showInfo:true,
+                    transition: 'slide',
+                    imageCrop: true
+                });
+     }
 
 Usage
 ---------------
@@ -31,8 +54,8 @@ Directive got one attribute named 'source'. Bind this up with a object of type:
 ```html
 <script type="text/javascript" src="/bower_components/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="/bower_components/galleria/galleria-1.3.3.min.js"></script>
 <script type="text/javascript" src="/bower_components/ng-galleria/ng-galleria.js"></script>
-<script type="text/javascript" src="/non_bower_components/galleria/galleria-1.3.3.min.js"></script>
 
 <body ng-controller="MyCtrl">
     <ng-galleria source="images"></ng-galleria>

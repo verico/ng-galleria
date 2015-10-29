@@ -7,7 +7,8 @@
   ],
   "dependencies": {
     "angular": "1.3.5",
-    "jquery": "~2.1.0"
+    "jquery": "~2.1.0",
+    "galleria": "~1.4.2"
   },
   "description": "Angular galleria directive"
 }
