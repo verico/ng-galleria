@@ -1,0 +1,34 @@
+<html ng-app="myGalleriaApp">
+<body ng-controller="MyCtrl">
+    <ng-galleria source="images"></ng-galleria>
+</body>
+
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="bower_components/galleria/src/galleria.js"></script>
+<script type="text/javascript" src="ng-galleria.js"></script>
+<script>
+    angular.module('myGalleriaApp', ['com.verico.ng-galleria'])
+            // Optional
+            .config(function (galleriaProvider) {
+                galleriaProvider.setPath('./bower_components/galleria/src/themes/classic/galleria.classic.js');
+            })
+            .controller('MyCtrl', MyCtrl);
+
+    function MyCtrl($scope) {
+        var images =  [{
+            image : "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/AngularJS_logo.svg/250px-AngularJS_logo.svg.png",       // Image url
+            thumb : "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/AngularJS_logo.svg/250px-AngularJS_logo.svg.png"  // Thumb url
+        },
+            {
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/React.js_logo.svg/250px-React.js_logo.svg.png",
+                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/React.js_logo.svg/250px-React.js_logo.svg.png"
+            }];
+
+        $scope.images = {
+            images:images,
+            index : images[0]
+        }
+    }
+</script>
+</html>

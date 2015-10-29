@@ -24,17 +24,18 @@ Include the module to your app
     angular.module('myModule', ['com.verico.ng-galleria']);
 
 
-### 3. Set Path
-then call the galleriaProvider and set your themes path.
+### 3. Set Path( optional)
+then call the galleriaProvider and set your themes path. 
 
+    // If not set, default path ./bower_components/galleria/src/themes/classic/galleria.classic.js will be used.
     .config(function (galleriaProvider) {
-        galleriaProvider.setPath('assets/galleria/themes/classic/galleria.classic.js');
+        galleriaProvider.setPath('./bower_components/galleria/src/themes/classic/galleria.classic.js');
      }
 ### 4. Configure 
 call the SetOptions method to pass options
 
     .config(function (galleriaProvider) {
-        galleriaProvider.setPath('assets/galleria/themes/classic/galleria.classic.js');
+        galleriaProvider.setPath('./bower_components/galleria/src/themes/classic/galleria.classic.js');
         
         galleriaProvider.setOptions({
                     dummy: '/res/img/dummy.gif',
@@ -48,36 +49,49 @@ call the SetOptions method to pass options
 Usage
 ---------------
 
-Directive got one attribute named 'source'. Bind this up with a object of type:
 
+HTML:
 
 ```html
-<script type="text/javascript" src="/bower_components/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
-<script type="text/javascript" src="/bower_components/galleria/galleria-1.3.3.min.js"></script>
-<script type="text/javascript" src="/bower_components/ng-galleria/ng-galleria.js"></script>
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="bower_components/galleria/src/galleria.js"></script>
+  <script type="text/javascript" src="ng-galleria.js"></script>
 
-<body ng-controller="MyCtrl">
-    <ng-galleria source="images"></ng-galleria>
-</body>
+  <body ng-controller="MyCtrl">
+      <ng-galleria source="images"></ng-galleria>
+  </body>
+  
 ```
 
-```javascript
-function MyCtrl($scope) {
+JS:
 
-    $scope.images = {
-            images:[
-                {
-                    image : "image1.jpg",       // Image url
-                    thumb : "image1_thumb.jpg"  // Thumb url
-                }
-            ],
-            index : {     // Selected image object when loaded
-                   image : "image1.jpg",
-                   thumb : "image1_thumb.jpg"
-            }
-        }
-};
+```javascript
+angular.module('myGalleriaApp', ['com.verico.ng-galleria'])
+            // Optional
+            .config(function (galleriaProvider) {
+                galleriaProvider.setPath('./bower_components/galleria/src/themes/classic/galleria.classic.js');
+            })
+            .controller('MyCtrl', MyCtrl);
+
+function MyCtrl($scope) {
+  var images =  [
+  {
+    image : "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/AngularJS_logo.svg/250px-AngularJS_logo.svg.png",       // Image url
+    thumb : "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/AngularJS_logo.svg/250px-AngularJS_logo.svg.png"  // Thumb url
+  },
+  {
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/React.js_logo.svg/250px-React.js_logo.svg.png",
+    thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/React.js_logo.svg/250px-React.js_logo.svg.png"
+  }];
+
+  $scope.images = {
+    images:images,
+    index : images[0]    
+  }  
+}
+
+
 ```
 [galleria]: http://galleria.io/
 [jQuery]: http://jquery.com/
