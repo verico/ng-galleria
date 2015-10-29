@@ -24,7 +24,7 @@ Include the module to your app
     angular.module('myModule', ['com.verico.ng-galleria']);
 
 
-### 3. Set Path( optional)
+### 3. Set Path(optional)
 then call the galleriaProvider and set your themes path. 
 
     // If not set, default path ./bower_components/galleria/src/themes/classic/galleria.classic.js will be used.
