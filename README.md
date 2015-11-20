@@ -44,7 +44,7 @@ call the SetOptions method to pass options
                     transition: 'slide',
                     imageCrop: true
                 });
-     }
+     });
 
 Usage
 ---------------
