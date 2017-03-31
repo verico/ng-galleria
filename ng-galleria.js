@@ -26,7 +26,7 @@ angular.module('com.verico.ng-galleria', [])
   .directive('ngGalleria', function () {
     return {
       restrict: 'E',
-      controller: function galleriaDirectiveCtrl($scope, $element, $timeout,galleria) {
+      controller: ['$scope', '$element', '$timeout', 'galleria', function galleriaDirectiveCtrl($scope, $element, $timeout,galleria) {
 
         if(!galleria.path){
           galleria.path = './bower_components/galleria/src/themes/classic/galleria.classic.js';
@@ -71,7 +71,7 @@ angular.module('com.verico.ng-galleria', [])
           if(GalleriaApiReference && GalleriaApiReference.destroy)
             GalleriaApiReference.destroy();
         });
-      },
+      }],
       template: '<div class="galleria" style="height: 100%; width: 100%">' +
                   '<a href="{{img.image}}" ng-repeat="img in source.images">' +
                     '<img src="{{img.thumb}}" data-title="{{img.title}}" data-description="{{img.description}}"' + 
